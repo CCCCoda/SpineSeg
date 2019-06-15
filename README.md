@@ -1,2 +1,2 @@
 # SpineSeg
-Data and code of MR spine segmentation
+Code of MR spine segmentation on advanced U-Net
