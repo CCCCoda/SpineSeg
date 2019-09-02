@@ -9,7 +9,7 @@ Created on Mon Apr 22 14:47:32 2019
 
 
 
-import keras.models as models
+import tensorflow.keras.models as models
 from skimage.transform import resize
 from skimage.io import imsave
 
@@ -56,7 +56,7 @@ def dice_coef_loss(y_true, y_pred):
 
 
 
-def briunet(pretrained_weights = None):
+def dpunet(pretrained_weights = None):
     
     inputs = Input((img_rows, img_cols, img_depth))
     
@@ -91,7 +91,6 @@ def briunet(pretrained_weights = None):
 
 	
     # Block 5
-    # branching for Atrous Spatial Pyramid Pooling
 	
     # hole = 2
     b1 = ZeroPadding2D(padding=(2, 2))(p4)
@@ -171,6 +170,9 @@ def briunet(pretrained_weights = None):
 
 
     return model
+
+
+
 
 
 
